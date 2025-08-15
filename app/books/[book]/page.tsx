@@ -2,7 +2,13 @@ import { fetchBooks } from "@/actions/fetchBooks"
 import { fetchChapters, getIdOfBook } from "@/actions/fetchChapters"
 import { fetchVerses } from "@/actions/fetchVersesOfChapter"
 import { cormorantGaramondRegular } from "@/app/layout"
+import ChatUI from "@/components/ChatUi"
 import { notFound } from "next/navigation"
+
+type Mess = {
+    role: string, 
+    content: string
+}
 
 const page = async ({
     params,
@@ -17,11 +23,16 @@ const page = async ({
 
     const validSlugs = books.find(boo => boo.slug.toString() === book);
 
-    
+
     if (!validSlugs) {
         notFound();
     }
 
+    const messages: Mess[] = [
+        {role: 'user', content: 'dshruwedkfjis'},
+        {role: 'assistant', content: 'sdjhksdnkjsdjkh'},
+        {role: 'user', content: 'gevrdo'},
+    ]
 
     return (
         <div className="mt-2 md:mt-3">
@@ -39,14 +50,14 @@ const page = async ({
 
             {/* first chapter */}
             <div className="max-w-[500px] px-1 md:px-2">
-                {firstChapter.map(chapter => 
-                    <p 
+                {firstChapter.map(chapter =>
+                    <p
                         key={`/${book}/${chapter.number}`}
                         className="text-lg">Chapter: {chapter.number}</p>
                 )}
                 <div>
-                    {firstChapVerses.map(vers => 
-                        <div 
+                    {firstChapVerses.map(vers =>
+                        <div
                             key={`/${book}/${vers.chapterId}/${vers.number}`}
                             className={`${cormorantGaramondRegular.className} md:text-xl`}>
                             <p><span className="font-semibold">{vers.number}: &nbsp;</span>{vers.text}</p>
@@ -54,6 +65,7 @@ const page = async ({
                     )}
                 </div>
             </div>
+           
         </div>
     )
 }
