@@ -4,7 +4,6 @@ import { SignedIn, SignedOut, SignInButton, SignOutButton, SignUpButton } from "
 import ChatUI from "@/components/ChatUi";
 import { auth } from "@clerk/nextjs/server";
 import { redis } from "@/lib/redis";
-import { ChatMessage } from "./bot/page";
 
 export default async function Home() {
 
