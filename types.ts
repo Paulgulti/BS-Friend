@@ -15,3 +15,8 @@ export type Verse = {
     text: string;
     chapterId: number;
 }
+
+export type ChatMessage = {
+  role: string;
+  content: string;
+};

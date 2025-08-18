@@ -14,7 +14,7 @@ const AllChapters = ({ chapters, book }: { chapters: Chapter[], book: string }) 
         }
     };
     return (
-        <div className="w-full mt-2">
+        <div className="w-full ">
             <select
                 onChange={handleChange}
                 defaultValue=""
