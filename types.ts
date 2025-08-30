@@ -17,6 +17,14 @@ export type Verse = {
 }
 
 export type ChatMessage = {
-  role: string;
-  content: string;
+    role: string;
+    content: string;
 };
+
+export type Note = {
+    title: string;
+    id: number;
+    content: string | null;
+    authorId: string;
+    createdAt: Date;
+}

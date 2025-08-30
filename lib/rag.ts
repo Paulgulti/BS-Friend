@@ -41,7 +41,10 @@ export async function queryRAG(query: string, topK = 5): Promise<Verse[]> {
     match_count: topK,
   });
 
-  if (error) throw error;
+  if (error) {
+    console.error("❌ Supabase RPC failed:", error);
+    throw error;
+  }
 
   return data as Verse[]
 

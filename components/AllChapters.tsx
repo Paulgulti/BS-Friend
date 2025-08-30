@@ -18,7 +18,7 @@ const AllChapters = ({ chapters, book }: { chapters: Chapter[], book: string }) 
             <select
                 onChange={handleChange}
                 defaultValue=""
-                className="border border-red-400 p-2 rounded bg-black "
+                className="border border-red-400 p-2 rounded  "
             >
                 <option value="" disabled>
                     Select a chapter

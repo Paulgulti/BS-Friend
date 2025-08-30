@@ -1,13 +1,9 @@
 import Link from "next/link";
 import { cinzel, playfairDisplay } from "./layout";
 import { SignedIn, SignedOut, SignInButton, SignOutButton, SignUpButton } from "@clerk/nextjs";
-import ChatUI from "@/components/ChatUi";
-import { auth } from "@clerk/nextjs/server";
-import { redis } from "@/lib/redis";
+
 
 export default async function Home() {
-
-
 
   return (
     <div className="container mx-auto">
@@ -15,7 +11,7 @@ export default async function Home() {
         <h1 className={`${playfairDisplay.className}`}>BSFriend</h1>
         <ul className="hidden md:gap-4 md:flex md:visible">
           <li className="cursor-pointer"><Link href="/books">Bible</Link></li>
-          <li>BSBuddy</li>
+          <li className="cursor-pointer"><Link href="/notes">Notes</Link></li>
           <li>Contact</li>
         </ul>
         <SignedOut>

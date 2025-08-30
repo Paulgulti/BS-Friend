@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ToastContainer } from "react-toastify";
 
 
 export const metadata: Metadata = {
@@ -39,8 +40,9 @@ export default function RootLayout({
       <html lang="en">
         <body
 
-        >
+>
           {children}
+          <ToastContainer/>
         </body>
       </html>
     </ClerkProvider>
