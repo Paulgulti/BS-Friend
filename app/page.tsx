@@ -32,7 +32,28 @@ export default async function Home() {
           <Link className="cursor-pointer border border-red-400 px-1 py-1 mt-2" href="/books">Start here</Link>
         </div>
       </div>
-      {/* <ChatUI initialHistory={parsedHistory} /> */}
+      <section className="py-20 bg-blue-50 text-center">
+        <h2 className="text-3xl font-bold">
+          Why <span className="text-blue-600">Choose Us?</span>
+        </h2>
+        <p className="mt-2 text-gray-600">
+          We provide more than just access — we ensure quality, convenience, and trust.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10 px-8">
+          {[
+            { title: "Accessibility", desc: "Access journals anytime, anywhere." },
+            { title: "Quality", desc: "Thousands of peer-reviewed sources." },
+            { title: "Affordability", desc: "Free plan for students, flexible options." },
+            { title: "Credibility", desc: "Verified, trusted content only." },
+          ].map((item) => (
+            <div key={item.title} className="bg-white p-6 rounded-2xl shadow">
+              <h3 className="font-semibold text-lg">{item.title}</h3>
+              <p className="text-sm text-gray-600 mt-2">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

@@ -32,7 +32,7 @@ const NoteTaker = () => {
     }
 
     return (
-        <div className="">
+        <div className="relative">
             <button
                 className="mr-2 hover:cursor-pointer border rounded-lg py-1 px-2 hover:bg-gray-200"
                 onClick={toggleCreateNoteButton}>
@@ -44,7 +44,7 @@ const NoteTaker = () => {
             </button>
             {createNote && userId && (
                 <div
-                    className="app-container bg-gray-400 border w-[300px] md:w-[500px] fixed top-85 left-1/2  z-50 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg p-4"
+                    className="app-container bg-gray-400 border w-[300px] md:w-[500px] absolute top-10 md:top-0 right-full md:mr-2 mr-[-24px] z-50 shadow-lg rounded-lg p-4"
                 >
                     <form
                         action={onSave}

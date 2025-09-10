@@ -1,11 +1,7 @@
 import { fetchChapters } from "@/actions/fetchChapters"
-import { handleSaveNoteToDB } from "@/actions/saveNoteToDB"
-import { userAuth } from "@/actions/userAuth"
 import AllChapters from "@/components/AllChapters"
 import ChatUI from "@/components/ChatUi"
 import NoteTaker from "@/components/NoteTaker"
-import { prisma } from "@/lib/prisma"
-import { Note } from "@/types"
 import { auth } from "@clerk/nextjs/server"
 import Link from "next/link"
 
@@ -19,34 +15,10 @@ export default async function BooksPageLayout({
 
     const { userId } = await auth()
     const { book } = await params
-    // const idOfBook = await getIdOfBook(book)
     const chapters = await fetchChapters(book)
 
-    // async function handleSaveNoteToDb(formData: FormData) {
-    //     'use server'
-    //     const html = (formData.get('html') as string) || ''
-    //     const text = (formData.get('text') as string) || ''
-    //     const noteTitle = (formData.get('noteTitle') as string) || ''
-    //     const user = await userAuth()
-    //     if (!user) {
-    //         console.log('User not found to create note in the db');
-    //         return 'User not found to create note in the db'
-    //     } else {
-    //         const newNote: Note = await prisma.note.create({
-    //             data: {
-    //                 title: noteTitle,
-    //                 content: html,
-    //                 authorId: user.clerkUserId,
-    //             }
-    //         })
-    //         console.log('note saved to db');
-    //         return newNote
-    //     }
-    // }
-    // const handleSaveNoteToDb = await handleSaveNoteToDB()
-
     return (
-        <div className="container px-1 md:px-2">
+        <div className="container mx-auto px-1 md:px-2">
             <div className="bg-sky-600 sticky top-0 z-20 py-2 md:py-3 pl-1">
                 <Link
                     className="border border-red-400 py-1 px-2 cursor-pointer flex items-center w-[150px] gap-2"
