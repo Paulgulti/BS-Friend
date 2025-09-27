@@ -28,12 +28,6 @@ const page = async ({
         notFound();
     }
 
-    const messages: Mess[] = [
-        {role: 'user', content: 'dshruwedkfjis'},
-        {role: 'assistant', content: 'sdjhksdnkjsdjkh'},
-        {role: 'user', content: 'gevrdo'},
-    ]
-
     return (
         <div className="mt-2 md:mt-3">
             {/* <h1>Book: {book}</h1>
