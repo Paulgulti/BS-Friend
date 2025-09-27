@@ -4,6 +4,7 @@ import { fetchNotes } from '@/actions/fetchNotes';
 import NoteCard from '@/components/NoteCard';
 import NoteTaker from '@/components/NoteTaker';
 import { Note } from '@/types';
+import Link from 'next/link';
 // import React, { useRef, useState } from 'react'
 
 
@@ -22,12 +23,19 @@ const page = async () => {
     <div className='container mx-auto mt-4 pl-1'>
       <div>
         <div className='flex justify-between mb-3 px-2 md:px-0'>
-          <h2>Your Notes</h2>
+          <Link
+            href='/'
+            className='border rounded-lg py-1 px-2 hover:bg-gray-200'>Back</Link>
           <NoteTaker />
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-4'>
+        <div>
           {notes && notes.length > 0 ? (
-            <NoteCard notes={notes} />
+            <div>
+              <h2 className='text-2xl'>Your Notes</h2>
+              <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-4'>
+                <NoteCard notes={notes} />
+              </div>
+            </div>
           ) : (
             <div className='h-screen flex m-auto justify-center items-center'>
               <div className='flex flex-col items-center'>
