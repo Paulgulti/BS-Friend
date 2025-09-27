@@ -1,14 +1,18 @@
 import { fetchBooks } from "@/actions/fetchBooks"
 import { fetchChapters, getIdOfBook } from "@/actions/fetchChapters"
 import { fetchVerses } from "@/actions/fetchVersesOfChapter"
-import { cormorantGaramondRegular } from "@/app/layout"
-import ChatUI from "@/components/ChatUi"
+import localFont from "next/font/local"
+// import { cormorantGaramondRegular } from "@/app/layout"
 import { notFound } from "next/navigation"
 
 type Mess = {
     role: string, 
     content: string
 }
+
+const cormorantGaramondRegular = localFont({
+    src: "../../../public/CormorantGaramond-Regular.ttf"
+})
 
 const page = async ({
     params,

@@ -1,6 +1,11 @@
 import { fetchVerses } from '@/actions/fetchVersesOfChapter'
-import { cormorantGaramondRegular } from '@/app/layout'
+import localFont from 'next/font/local'
+// import { cormorantGaramondRegular } from '@/app/layout'
 import React from 'react'
+
+const cormorantGaramondRegular = localFont({
+    src: "../../../../public/CormorantGaramond-Regular.ttf"
+})
 
 const page = async ({
   params
