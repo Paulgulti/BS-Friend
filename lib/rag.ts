@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
-import { pipeline } from "@huggingface/transformers";
+// import { pipeline } from "@huggingface/transformers";
+import { InferenceClient } from "@huggingface/inference";
 
 export type Verse = {
   book: number;
@@ -17,23 +18,35 @@ const supabase = createClient(
 // HuggingFace embedding model cache
 let extractor: any;
 
-async function loadModel() {
-  if (!extractor) {
-    console.log("Loading embedding model...");
-    extractor = await pipeline(
-      "feature-extraction",
-      "Xenova/all-MiniLM-L6-v2"
-    );
-  }
-  return extractor;
-}
+// async function loadModel() {
+//   if (!extractor) {
+//     console.log("Loading embedding model...");
+//     extractor = await pipeline(
+//       "feature-extraction",
+//       "Xenova/all-MiniLM-L6-v2"
+//     );
+//   }
+//   return extractor;
+// }
+
+const client = new InferenceClient(process.env.HF_API_KEY);
+
 
 export async function queryRAG(query: string, topK = 5): Promise<Verse[]> {
-  const model = await loadModel();
+  // const model = await loadModel();
 
-  // Create embedding for the query
-  const output = await model(query, { pooling: "mean", normalize: true });
-  const queryEmbedding = Array.from(output.data as Float32Array);
+  // // Create embedding for the query
+  // const output = await model(query, { pooling: "mean", normalize: true });
+  // const queryEmbedding = Array.from(output.data as Float32Array);
+
+    // Create embedding using Hugging Face Inference API
+  const output = await client.featureExtraction({
+    model: "sentence-transformers/all-MiniLM-L6-v2",
+    inputs: query,
+  });
+
+  // The API returns a nested array → flatten & normalize
+  const queryEmbedding = Array.from(output);
 
   // Search in Supabase
   const { data, error } = await supabase.rpc("match_verses", {
@@ -55,3 +68,4 @@ export async function queryRAG(query: string, topK = 5): Promise<Verse[]> {
   //   .map((v) => `${v.book} ${v.chapter}:${v.verse} — ${v.text}`)
   //   .join("\n");
 }
+

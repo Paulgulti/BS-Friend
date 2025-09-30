@@ -6,6 +6,7 @@ import React from 'react'
 // import { lucidaBlackletterRegular, wallauUnzialBold } from '../layout';
 import localFont from 'next/font/local';
 
+
 const lucidaBlackletterRegular = localFont({
     src: "../../public/Lucida-Blackletter-Regular.woff"
 })

@@ -141,7 +141,7 @@ These are relevant verses that may help you answer. Use them naturally if helpfu
 but never say "the user provided" them:
 
 ${context}`
-};
+    };
 
     const newMessages = [...prevMessages, { role: 'user', content: input }];
 

@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import { useState } from "react";
 
 
+
 const playfairDisplay = localFont({
   src: "../public/PlayfairDisplay-VariableFont.ttf"
 })
