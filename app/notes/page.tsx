@@ -31,7 +31,7 @@ const page = async () => {
         <div>
           {notes && notes.length > 0 ? (
             <div>
-              <h2 className='text-2xl'>Your Notes</h2>
+              <h2 className='text-2xl mb-2'>Your Notes</h2>
               <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-4'>
                 <NoteCard notes={notes} />
               </div>

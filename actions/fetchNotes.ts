@@ -14,6 +14,9 @@ export async function fetchNotes() {
         where: {
             authorId: user.id
         },
+        orderBy: {
+            createdAt: 'desc'
+        }
     })
 
     if (!notes) {

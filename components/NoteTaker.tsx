@@ -71,7 +71,7 @@ const NoteTaker = () => {
                 </div>
             )}
             {createNote && !userId && (
-                <div>
+                <div className="pr-2">
                     <SignInButton>Sign in first</SignInButton>
                 </div>
             )}

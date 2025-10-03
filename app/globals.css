@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --breakpoint-lg: 800px;
+}
 
 @keyframes slide-up {
   from {
@@ -15,6 +18,10 @@
 
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
 }
 
 

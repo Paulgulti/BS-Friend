@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ToastContainer } from "react-toastify";
+import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {

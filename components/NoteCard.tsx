@@ -10,7 +10,7 @@ const NoteCard = ({ notes }: { notes: Note[] }) => {
             {notes.map(note => (
                 <div
                     key={note.id} 
-                    className='border border-gray-500  rounded-xl w-[250px] pl-1'>
+                    className='shadow-xl rounded-xl w-[250px] pl-1'>
                     <h3 className='prose line-clamp-1 text-gray-700'>{note.title}</h3>
                     <div
                         className='prose line-clamp-2'
