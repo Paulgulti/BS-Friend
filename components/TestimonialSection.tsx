@@ -16,8 +16,9 @@ const TestimonialSection = () => {
         img: string;
         role: string
     }
+    
 
-    const settings: Settings = { // Type the settings object
+    const settings: Settings = {
         dots: true,
         infinite: true,
         speed: 500,
@@ -31,21 +32,13 @@ const TestimonialSection = () => {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     infinite: true,
                     dots: true
                 }
             },
-            // {
-            //   breakpoint: 600,
-            //   settings: {
-            //     slidesToShow: 2,
-            //     slidesToScroll: 2,
-            //     initialSlide: 2
-            //   }
-            // },
             {
-                breakpoint: 600,
+                breakpoint: 765,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -57,31 +50,31 @@ const TestimonialSection = () => {
     const data: Data[] = [
         {
             name: "Eskedar Yeshitila",
-            review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eos neque veniam iste, qui laboriosam provident exercitationem impedit quia rem, sed commodi! Animi voluptate adipisci, non accusamus corrupti enim itaque?",
+            review: "This app combines Bible reading, note-taking, and an AI chatbot that answers questions instantly—perfect for both daily devotionals and deeper study",
             img: "/helena.jpg",
             role: "Social media manager"
         },
         {
             name: "Gedion Takele",
-            review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eos neque veniam iste, qui laboriosam provident exercitationem impedit quia rem, sed commodi! Animi voluptate adipisci, non accusamus corrupti enim itaque?",
+            review: "Makes studying the Bible simple and interactive—love how the AI chatbot explains verses clearly!",
             img: "/franklin.jpg",
             role: "Marketing manager"
         },
         {
             name: "Olyad Melese",
-            review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eos neque veniam iste, qui laboriosam provident exercitationem impedit quia rem, sed commodi! Animi voluptate adipisci, non accusamus corrupti enim itaque?",
+            review: "A beautifully designed Bible study app that makes scripture more engaging and accessible. The built-in AI chatbot feels like a personal guide for deeper understanding.",
             img: "/john.jpg",
             role: "Entreprenur"
         },
         {
             name: "Lemi Zewde",
-            review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eos neque veniam iste, qui laboriosam provident exercitationem impedit quia rem, sed commodi! Animi voluptate adipisci, non accusamus corrupti enim itaque?",
+            review: "Finally an app that combines reading, note-taking, and smart guidance in one place. Super helpful!",
             img: "/jeffrey.jpg",
             role: "Entreprenur"
         },
         {
             name: "Abenezer Tasew",
-            review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eos neque veniam iste, qui laboriosam provident exercitationem impedit quia rem, sed commodi! Animi voluptate adipisci, non accusamus corrupti enim itaque?",
+            review: "This Bible study app feels like having a study partner 24/7. The AI chatbot is a game-changer.",
             img: "/victor.jpg",
             role: "Graphics designer"
         },
@@ -92,14 +85,14 @@ const TestimonialSection = () => {
         <div className='mt-10'>
             <div className='flex flex-col lg:flex-row lg:justify-around items-center '>
                 <div className='flex flex-col items-center'>
-                    <p className='font-semibold'>Our community's reaction</p>
+                    <p className={`font-semibold text-xl`}>Our community's reaction</p>
                 </div>
-                <div className='w-[240px] md:w-[600px] mt-5 lg:mt-0'>
+                <div className=' w-[240px] md:w-[600px] mt-5 lg:mt-0'>
                     <Slider {...settings}>
                         {data.map(rev => (
-                            <div className='p-2 shadow-2xl '>
+                            <div className='p-2 shadow-2xl h-[150px]'>
                                 <div>
-                                    <p className='line-clamp-3'>{rev.review}</p>
+                                    <p className='line-clamp-5 text-sm'>{rev.review}</p>
                                 </div>
                                 <div className='flex gap-2 mt-2'>
                                     <Image
