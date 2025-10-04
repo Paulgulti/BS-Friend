@@ -10,7 +10,7 @@ const ValueSection = () => {
           alt=""
           width={40}
           height={40}
-          className='w-full h-40 md:h-120 border'
+          className='w-full h-40 md:h-120'
         />
       </div>
       <div className='flex flex-col justify-center'>
