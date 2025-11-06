@@ -173,7 +173,7 @@ export default function ChatUI({ initialHistory }: { initialHistory: ChatMessage
               setMessages(history);
             }
           }}
-          className="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full w-14 h-14 shadow-lg flex items-center justify-center hover:bg-blue-600 transition"
+          className="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full w-14 h-14 shadow-lg flex items-center justify-center hover:bg-blue-600 hover:cursor-pointer transition z-99"
         >
           💬
         </button>

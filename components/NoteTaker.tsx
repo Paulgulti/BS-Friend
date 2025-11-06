@@ -5,6 +5,7 @@ import CustomEditor, { CustomEditorHandle } from "./CustomEditor";
 import { SignInButton, useAuth } from "@clerk/nextjs";
 import { handleSaveNoteToDB } from "@/actions/saveNoteToDB";
 import { toast } from "react-toastify";
+import { Button } from "./ui/button";
 
 const NoteTaker = () => {
     const [createNote, setCreateNote] = useState<boolean>(false);
@@ -50,7 +51,7 @@ const NoteTaker = () => {
                         action={onSave}
                         className="editor-wrapper ">
                         <h1>Note taker</h1>
-                        <label htmlFor="noteTitle">Title: &nbsp;<input id="noteTitle" name="noteTitle" value={noteTitle} onChange={(e) => setNoteTitle(e.target.value)} required type="text" className="border"/></label>
+                        <label htmlFor="noteTitle">Title: &nbsp;<input id="noteTitle" name="noteTitle" value={noteTitle} onChange={(e) => setNoteTitle(e.target.value)} required type="text" className="border" /></label>
                         <CustomEditor
                             ref={editorRef}
                             value={editorContent}
@@ -72,7 +73,9 @@ const NoteTaker = () => {
             )}
             {createNote && !userId && (
                 <div className="pr-2">
-                    <SignInButton>Sign in first</SignInButton>
+                    <Button asChild className="mt-2 hover:cursor-pointer hover:bg-gray-800">
+                        <SignInButton>Sign in first</SignInButton>
+                    </Button>
                 </div>
             )}
         </div>

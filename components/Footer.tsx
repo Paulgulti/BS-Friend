@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="relative bg-sky-300 text-white text-center pt-10 mt-30">
+        <div className="relative bg-sky-300 text-white text-center pt-10 mt-30">
             {/* Semi-arc shape */}
             <div className="absolute -top-20 left-0 w-full overflow-hidden leading-none">
                 <svg
@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
                 <p className="mt-2 text-sm text-gray-600 ">© 2025 AdAstra ET. All rights reserved.</p>
             </div>
-        </footer>
+        </div>
     )
 }
 

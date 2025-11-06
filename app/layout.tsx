@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ToastContainer } from "react-toastify";
+import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
         <body>
           {children}
           <ToastContainer />
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

@@ -19,8 +19,8 @@ export default async function BooksPageLayout({
 
     return (
         <div className=" mx-auto px-1 md:px-2">
-            <div className="bg-sky-600 ">
-                <div className=" mx-auto sticky top-0 z-20 py-2 md:py-3 pl-1">
+            <div className="bg-sky-300 sticky top-0 z-50 w-full shadow-md">
+                <div className="mx-auto py-2 md:py-3 pl-1">
                     <Link
                         className="border border-red-400 py-1 px-2 cursor-pointer flex items-center w-[150px] gap-2"
                         href="/books">
@@ -34,8 +34,8 @@ export default async function BooksPageLayout({
                         </svg>
                     </Link>
                     <div className="flex justify-between ">
-                        <div className="flex  flex-col md:flex-row md:items-center  md:py-2">
-                            <h1 className="text-lg w-[200px] ">Book: <span>{book}</span></h1>
+                        <div className="flex  flex-col md:gap-2 md:py-2">
+                            <h1 className="text-lg">Book: <span>{book.charAt(0).toUpperCase() + book.slice(1).toLowerCase()}</span></h1>
                             <AllChapters chapters={chapters} book={book} />
                         </div>
                         <NoteTaker />
