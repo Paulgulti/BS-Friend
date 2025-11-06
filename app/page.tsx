@@ -50,6 +50,7 @@ export default function Home() {
       <VideoSection/>
       <ValueSection/>
       <TestimonialSection/>
+      <Footer/>
     </div>
   );
 }
